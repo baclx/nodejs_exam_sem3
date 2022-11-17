@@ -45,7 +45,7 @@ app.post('/api/v1/addUser', jsonParser, async (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         phoneNumber: req.body.phoneNumber,
-        userName: req.body.userName,
+        username: req.body.userName,
         password: req.body.password
     }
 
