@@ -1,15 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-// import express from 'express';
-// import bodyParser from 'body-parser';
-// import fetch from 'node-fetch';
-// import db from "./models"
-
-
-// import fetch from "node-fetch";
+const cors = require("cors");
 
 const app = express()
+
+var corsOptions = {
+    origin: "http://localhost:8080"
+};
+
+app.use(cors(corsOptions));
 
 const jsonParser = bodyParser.json()
 
@@ -75,7 +75,7 @@ app.get('/api/v1/addUser', jsonParser, async (req, res) => {
         });
 })
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
